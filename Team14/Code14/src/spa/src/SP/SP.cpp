@@ -51,5 +51,8 @@ void SP::startSPProcessing(std::string& input) {
     } catch (const SemanticError& e) {
         std::cout << "\n" << e.what() << "\n\n" << "Terminating program due to invalid SIMPLE code." << std::endl;
         std::exit(EXIT_FAILURE); // Exit the program with an error code
+    } catch (const std::runtime_error& e) {
+        std::cout << "\n" << e.what() << "\n\n" << "Terminating program due to invalid SIMPLE code." << std::endl;
+        std::exit(EXIT_FAILURE); // Exit the program with an error code
     }
 }
