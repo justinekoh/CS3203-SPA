@@ -238,7 +238,7 @@ SPToken SyntacticValidator::peekToken() {
 }
 
 SPToken SyntacticValidator::peekNextToken() {
-    if (!isCurrValid()) {
+    if (isCurrValid()) {
         return tokens[curr + 1];
     } else {
         throw std::out_of_range("Error: attempted to access out-of-range char in input file");
